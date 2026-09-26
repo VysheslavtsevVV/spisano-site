@@ -1,0 +1,68 @@
+/* Сайт Spisano: цвета и шрифты — из design/tokens.json приложения. */
+@font-face { font-family: "Unbounded"; font-weight: 800; src: url("fonts/Unbounded-ExtraBold.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "Golos Text"; font-weight: 400; src: url("fonts/GolosText-Regular.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "Golos Text"; font-weight: 600; src: url("fonts/GolosText-SemiBold.ttf") format("truetype"); font-display: swap; }
+
+:root {
+  --bg: #F4EFF3;
+  --surface: #FFFFFF;
+  --border: #DCD3E0;
+  --text: #3A3550;
+  --muted: #585272;
+  --primary: #3A3550;
+  --hero: linear-gradient(135deg, #3A3550, #585272, #8A82A6);
+  --on-hero: #F4EFF3;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #26223A;
+    --surface: #312C47;
+    --border: #585272;
+    --text: #F4EFF3;
+    --muted: #B7AFC9;
+    --primary: #B7AFC9;
+    --hero: linear-gradient(135deg, #585272, #8A82A6);
+  }
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 400 16px/1.6 "Golos Text", system-ui, sans-serif;
+}
+main { max-width: 720px; margin: 0 auto; padding: 32px 16px 64px; }
+a { color: var(--primary); font-weight: 600; }
+
+.brand { display: flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none; margin-bottom: 32px; }
+.brand svg { width: 32px; height: 32px; }
+.brand span { font: 800 22px/1 "Unbounded", sans-serif; }
+
+h1 { font: 800 28px/1.2 "Unbounded", sans-serif; margin: 0 0 8px; }
+h2 { font: 800 18px/1.3 "Unbounded", sans-serif; margin: 32px 0 8px; }
+p, li { color: var(--muted); }
+.updated { font-size: 14px; }
+
+.hero {
+  background: var(--hero);
+  color: var(--on-hero);
+  border-radius: 20px;
+  padding: 28px 24px;
+  margin-bottom: 24px;
+}
+.hero h1 { color: var(--on-hero); }
+.hero p { color: var(--on-hero); opacity: .9; margin: 0; }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px 20px;
+  margin: 12px 0;
+}
+.card p { margin: 4px 0 0; }
+.card b { color: var(--text); }
+
+footer { margin-top: 48px; font-size: 14px; color: var(--muted); }
+footer a { margin-right: 16px; }
